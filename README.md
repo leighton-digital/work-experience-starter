@@ -64,4 +64,91 @@ Radix UI and Tailwind CSS make a strong pair for building user interfaces. Radix
 
 When used together, you can focus on creating a seamless, user-friendly experience with Radix UI, while Tailwind CSS helps you shape the visual design to match your brand or style. This combination allows you to build interfaces that are both highly functional and visually appealing without extra hassle.
 
+## Choose what you want to develop
+
+These are some of the application ideas that we have come up with that you might want to build. If you have small project that you would like to buid speak to us and lets explore it!
+
+### Movie Explorer
+
+Create a web application that allows users to search for movies using a public API like <https://www.omdbapi.com/>
+
+Features:
+
+- Search bar for querying movies
+- Display list of results showing movie poster, title and summary
+- Detailed view or modal for full detail
+- Create a watch list feature
+
+Learning Points: Handling API responses, routing (if using React Router), and dynamic lists.
+
+### Markdown Editor with Live Preview
+
+Develop a live markdown editor where users can write markdown text and see a real-time rendered preview.
+
+Features:
+
+- Two-pane layout: one for the editor, one for the preview.
+
+- Use a markdown library (like marked) to render HTML.
+
+- Option to switch between light and dark themes.
+
+- Local storage saving for notes.
+
+Learning Points: Managing controlled inputs, using third-party libraries, and real-time data processing.
+
+### Kanban Task Board/Todo List
+
+Build a simplified version of a Kanban board or todo list for managing tasks, this can use the back end from the previous work experience
+
+Features:
+
+- Columns representing different task statuses (e.g., To Do, In Progress, Done).
+
+- Drag-and-drop functionality to move tasks between columns (using libraries like react-beautiful-dnd).
+
+- CRUD operations for tasks.
+
+- Responsive design to work well on various devices.
+
+Learning Points: Advanced state management, implementing drag-and-drop, and dynamic UI updates.
+
+### Memory Card Game
+
+Create a simple card-matching memory game.
+
+Features:
+
+- A grid of cards that users flip to find matching pairs.
+
+- Timer or scoring system to track performance.
+
+- Simple animations for card flips.
+
+- Reset and game-over states.
+
+Learning Points: React state and lifecycle methods (or hooks), handling user interactions, and basic animations with CSS or React Transition Group.
+
+### Tic Tac Toe
+
+Create a classic Tic Tac Toe game where two players alternate placing Xs and Os on a 3x3 grid.
+
+Features:
+
+- A dynamic board that updates as players make moves.
+- Logic to detect win, lose, or draw conditions.
+- Option to implement a simple AI for single-player mode.
+  Learning Points: Handling user input and state updates. Implementing game logic and win-check algorithms. Responsive design and component reusability.
+
+### Rock, Paper, Scissors
+
+Create a simple Rock, Paper, Scissors game where a player chooses an option and competes against a computer opponent.
+Features:
+
+- Buttons for Rock, Paper, and Scissors.
+- Randomly generate the computer's move.
+- Display the result of each round and keep score.
+
+Learning Points: Implementing basic game logic with conditional statements. Event handling and state management. Simple UI design and feedback based on game results.
+
 ## Starting Development
