@@ -152,3 +152,85 @@ Features:
 Learning Points: Implementing basic game logic with conditional statements. Event handling and state management. Simple UI design and feedback based on game results.
 
 ## Starting Development
+
+## OMDb API Cheat Sheet for Postman Beginners
+
+### Step 1: Install and Open Postman
+
+- **Download & Install:**  
+  Download Postman from [Postman's website](https://www.postman.com/downloads/) and install it or run it from the web browser.
+- **Launch the App:**  
+  Open Postman and sign in if needed.
+
+### Step 2: Create a New Request
+
+1. **Click "New":**  
+   In the top left corner, click the **"New"** button.
+2. **Select "Request":**  
+   Choose **"Request"** from the options.
+3. **Name Your Request:**  
+   Give it a name (e.g., "OMDb API Test") and optionally save it to a new or existing collection.
+
+### Step 3: Set Up the API Call
+
+1. **Set Method to GET:**  
+   Ensure the method dropdown is set to **GET** (OMDb API uses GET requests).
+2. **Enter the Base URL:**  
+   In the URL field, type: <http://www.omdbapi.com/>
+
+### Step 4: Add Query Parameters
+
+1. **Click the "Params" Tab:**  
+   Directly below the URL field, click the **"Params"** button to open the query parameters section.
+2. **Add Required Parameters:**
+
+- **apikey:** Your personal OMDb API key.  
+  _Example:_
+
+  | KEY    | VALUE        |
+  | ------ | ------------ |
+  | apikey | YOUR_API_KEY |
+
+- **t, s, or i:** Choose one based on what you need:
+  - **t:** To search by title (e.g., `Inception`).
+  - **s:** To search by keyword (e.g., `Batman`).
+  - **i:** To search by IMDb ID (e.g., `tt1375666`).
+
+_For a detailed movie lookup using the title "Inception", add:_
+
+| KEY  | VALUE     |
+| ---- | --------- | ---------------------------------- |
+| t    | Inception |
+| plot | full      | _(optional: to get the full plot)_ |
+
+3. **URL Example:**  
+   With the parameters above, your URL should look like:  
+   <http://www.omdbapi.com/?apikey=YOUR_API_KEY&t=Inception&plot=full>
+
+## Step 5: Send the Request and View the Response
+
+1. **Click "Send":**  
+   Once your URL and parameters are set, click the **"Send"** button.
+2. **Review the Response:**
+
+- The response will appear in the lower section in JSON format.
+- You should see details such as the movie title, year, director, plot, ratings, etc.
+- For search queries (using the `s` parameter), you'll get an array of results under the key `"Search"`.
+
+## Step 6: Save Your Request (Optional)
+
+- **Save Request:**  
+  Click **"Save"** to store the request in your collection for future use.
+- **Organize Your Collection:**  
+  Name your collection (e.g., "OMDb API Calls") and save all related requests there.
+
+## Tips for Troubleshooting
+
+- **Check Your API Key:**  
+  Ensure that your API key is correct and has not expired.
+- **Review Error Messages:**  
+  If you see `"Response": "False"` along with an `"Error"` message in the JSON, check your parameters for typos or missing values.
+- **Experiment with Parameters:**  
+  Try different combinations (like changing `t` to `s` for search results) to see how the API responds.
+
+This guide should help you confidently create your first OMDb API call using Postman. As you grow more comfortable, you can start integrating these calls into your Next.js application. Happy testing!
