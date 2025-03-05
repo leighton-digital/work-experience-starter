@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import SearchForm from './_components/SearchForm';
+import ListItem from './_components/ListItem';
+
 export default async function Page() {
   const data = await fetch(
     `https://www.omdbapi.com/?apikey=${process.env.APIKEY}&s=Inception`
@@ -5,17 +9,18 @@ export default async function Page() {
   const movies = await data.json();
 
   return (
-    <ul>
-      {movies.Search.map((movie) => (
-        <li key={movie.imdbID}>
-          <h1>{movie.Title}</h1>
-          {movie.Poster !== 'N/A' && (
-            <p>
-              <img src={movie.Poster} />
-            </p>
-          )}
-        </li>
-      ))}
-    </ul>
+    <>
+      <SearchForm />
+      <ul>
+        {movies.Search.map((movie: any) => (
+          <ListItem
+            key={movie.imdbID}
+            poster={movie.Poster}
+            title={movie.Title}
+            id={movie.imdbID}
+          />
+        ))}
+      </ul>
+    </>
   );
 }
