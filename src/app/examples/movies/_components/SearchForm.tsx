@@ -1,13 +1,19 @@
 'use client';
-import * as React from 'react';
+import { useState } from 'react';
 import { Form } from 'radix-ui';
 
-export default function SearchForm() {
+export default function SearchForm({
+  onSearch,
+}: {
+  onSearch: (query: string) => void;
+}) {
+  const [query, setQuery] = useState('');
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget as HTMLFormElement);
-    console.log('Searching for:', formData.get('search'));
-    alert(`Searching for: ${formData.get('search')}`);
+    if (query.trim()) {
+      onSearch(query);
+    }
   };
 
   return (
@@ -18,6 +24,7 @@ export default function SearchForm() {
             className="box-border inline-flex h-[40px] w-full appearance-none items-center justify-center rounded bg-blackA2 px-3 text-[15px] leading-none text-white shadow-[0_0_0_1px] shadow-blackA6 outline-none selection:bg-blackA6 selection:text-white hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
             type="text"
             placeholder="Search for a movie"
+            onChange={(e) => setQuery(e.target.value)}
             required
           />
         </Form.Control>

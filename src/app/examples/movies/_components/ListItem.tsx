@@ -11,7 +11,7 @@ export default function ListItem({
 }) {
   return (
     <>
-      <Link href={`/examples/movies/${id}`}>
+      <Link href={`movies/${id}`}>
         <h1>{title}</h1>
         <img src={poster} alt={title} width="150px" />
       </Link>
