@@ -28,13 +28,13 @@ export default function Display({ value, filt = 's' }:{value:string, filt?:strin
 
     return (
         <div>
-            <h1>
+            <h1 style={{color:'orange'}}>
                 {filt ==='s'&&<>Displaying Movies</>}
             </h1>
             <h2>
                 <Grid columns={{ initial: "1", md: "2", lg: "3" }} gap="3" width="auto">
                     {filter.length === 0 ? (
-                        <h2>No movies found</h2>
+                        <h2 style={{color:'orange'}}>No movies found</h2>
                     ) : (
                         filter.map((i) => (
                             <Box key={i.imdbID}>

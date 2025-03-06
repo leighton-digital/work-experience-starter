@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import customColour from '/globals.css'
 
 export default function ListItem({
   poster,
@@ -14,7 +13,7 @@ export default function ListItem({
     return (
       <>
         <Link href={`/${id}`}>
-          <h1 style={{color:}}>{title}</h1>
+          <h1 style={{color: 'Orange'}}>{title}</h1>
           <img src={'/Qmark.png'} alt='${title} movie poster' width="150px" />
         </Link>
       </>
@@ -24,7 +23,7 @@ export default function ListItem({
     return (
       <>
         <Link href={`/${id}`}>
-          <h1>{title}</h1>
+          <h1 style={{color:'orange'}}>{title}</h1>
           <img src={poster} alt='${title} movie poster' width="150px" />
         </Link>
       </>
