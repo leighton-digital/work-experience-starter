@@ -17,22 +17,22 @@ export default async function Page({
 
   return (
     <>
-      <h1>Movie Details </h1>
+      <h1 style={{color:'orange'}}>Movie Details </h1>
       <ListItem poster = {movie.Poster} title = {movie.Title} id = {movie.imdbID}/>
-      <h4>Rating: {movie.Rated}</h4>
-      <h5>Release Date: {movie.Released}</h5>
-      <h6>Length: {movie.Runtime}</h6>
-      <h5>Genres: {movie.Genre}</h5>
-      <h4>Writer: {movie.Writer}</h4>
-      <h3>Director: {movie.Director}</h3>
-      <h2>Actors: {movie.Actors}</h2>
-      <h1>Plot Summary: {movie.Plot}</h1>
-      <h2>Language: {movie.Language}</h2>
-      <h3>Awards Won: {movie.Awards}</h3>
-      <h4>Media Type: {movie.Type}</h4>
-      <h5>IMDB Rating: {movie.imdbRating}</h5>
-      <h6><Watchlistbox imdbID = {movie.imdbID} /></h6>
-      <h5><Link legacyBehavior href = '/'><a style={{'color':'blue', 'textDecoration': 'underline'}}>Return to home</a></Link></h5>
+      <h4 style={{color:'orange'}}>Rating: {movie.Rated}</h4>
+      <h5 style={{color:'orange'}}>Release Date: {movie.Released}</h5>
+      <h6 style={{color:'orange'}}>Length: {movie.Runtime}</h6>
+      <h5 style={{color:'orange'}}>Genres: {movie.Genre}</h5>
+      <h4 style={{color:'orange'}}>Writer: {movie.Writer}</h4>
+      <h3 style={{color:'orange'}}>Director: {movie.Director}</h3>
+      <h2 style={{color:'orange'}}>Actors: {movie.Actors}</h2>
+      <h1 style={{color:'orange'}}>Plot Summary: {movie.Plot}</h1>
+      <h2 style={{color:'orange'}}>Language: {movie.Language}</h2>
+      <h3 style={{color:'orange'}}>Awards Won: {movie.Awards}</h3>
+      <h4 style={{color:'orange'}}>Media Type: {movie.Type}</h4>
+      <h5 style={{color:'orange'}}>IMDB Rating: {movie.imdbRating}</h5>
+      <h6 style={{color:'orange'}}><Watchlistbox imdbID = {movie.imdbID} /></h6>
+      <h5 style={{color:'orange'}}><Link legacyBehavior href = '/'><a style={{'color':'blue', 'textDecoration': 'underline'}}>Return to home</a></Link></h5>
     </>
   );
 }
