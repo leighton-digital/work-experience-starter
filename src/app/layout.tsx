@@ -28,7 +28,7 @@ export default function RootLayout({
           <div className='bg-slate-600 pt-[150px]' style={{ minHeight: '100vh', border:'none', outline:'none' }}>
             {children}
           </div></Theme>
-          <footer className="bg-slate-600 p-4 fixed bottom-0 left-0 w-full z-10">
+          <footer className="bg-transparent p-4 fixed bottom-0 left-0 w-full z-10">
         <Link legacyBehavior href="/Watchlist">
           <img
             src="/Footer.png"
