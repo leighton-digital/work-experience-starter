@@ -15,6 +15,7 @@ export default {
         ...mauve,
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        customColour: '#c39b60'
       },
     },
   },
