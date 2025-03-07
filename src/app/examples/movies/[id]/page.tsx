@@ -16,9 +16,26 @@ export default async function Page({
 
   //Show the movie details
   return (
-    <>
-      <h1>Movie Details </h1>
-      {movie.Title}
-    </>
+    <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
+      <h1 style={{ borderBottom: '2px solid #ccc', paddingBottom: '10px' }}>Movie Details</h1>
+      <div style={{ marginBottom: '20px' }}>
+        <strong>Plot:</strong> {movie.Plot}
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <strong>Actors:</strong> {movie.Actors}
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <strong>Genre:</strong> {movie.Genre}
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <strong>Type:</strong> {movie.Type}
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <strong>Released:</strong> {movie.Released}
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <strong>IMDb Rating:</strong> {movie.imdbRating}
+      </div>
+    </div>
   );
 }

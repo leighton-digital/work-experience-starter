@@ -19,3 +19,16 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: 'SuperMario';
+  src: url('../../fonts/SuperMario256.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.supermario {
+  font-family: 'SuperMario', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}

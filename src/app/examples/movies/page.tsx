@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <>
       <SearchForm onSearch={setSearchQuery} />
-      {movies.length === 0 && <p>Please enter a search</p>}
+      {movies?.length === 0 && <p>Please enter a search</p>}
       <ul>
         {movies?.map((movie: any) => (
           <ListItem
