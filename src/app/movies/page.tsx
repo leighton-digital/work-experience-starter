@@ -1,8 +1,8 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Grid, Box } from "@radix-ui/themes";
+import ListItem from "./_components/ListItem";
+import SearchForm from "./_components/SearchForm";
 import { useState, useEffect } from 'react';
-import SearchForm from './_components/SearchForm';
-import ListItem from './_components/ListItem';
 
 export default function Page() {
   const [searchQuery, setSearchQuery] = useState(''); // Default search term
@@ -19,21 +19,17 @@ export default function Page() {
     };
     fetchMovies();
   }, [searchQuery]); // Refetch when search query changes
-
-  return (
-    <>
-      <SearchForm onSearch={setSearchQuery} />
-      {movies?.length === 0 && <p>Please enter a search</p>}
-      <ul>
-        {movies?.map((movie: any) => (
-          <ListItem
-            key={movie.imdbID}
-            poster={movie.Poster}
-            title={movie.Title}
-            id={movie.imdbID}
-          />
+  
+    return (
+      <>
+      <SearchForm onSearch={setSearchQuery}/>
+      <Grid columns={{ initial: "1", md: "2" }} gap="3" width="auto">
+        {movies?.map((movie) => (
+        <Box key={movie.imdbID} className="p-8 hover:bg-yellow-500/50 hover:shadow-xl">
+         <ListItem id={movie.imdbID} poster={movie.Poster} title={movie.Title} />
+        </Box>
         ))}
-      </ul>
-    </>
-  );
-}
+      </Grid>
+      </>
+    )
+  }

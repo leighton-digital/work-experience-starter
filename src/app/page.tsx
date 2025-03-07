@@ -11,7 +11,7 @@ export default function Home() {
               <Avatar size="3" radius="full" fallback="M" color="bronze" />
               <Box>
                 <Text as="div" size="2" weight="bold">
-                  Movie List
+                  Movie List Example
                 </Text>
                 <Text as="div" size="2" color="gray">
                   List movies from the OMDB API
@@ -39,6 +39,25 @@ export default function Home() {
           </Card>
         </Link>
       </Box>
+
+      <Box width="350px">
+        <Link href="movies">
+          <Card size="1">
+            <Flex gap="3" align="center">
+              <Avatar size="3" radius="full" fallback="M" color="bronze" />
+              <Box>
+                <Text as="div" size="2" weight="bold">
+                  Movie List
+                </Text>
+                <Text as="div" size="2" color="gray">
+                List movies from the OMDB API
+                </Text>
+              </Box>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    
     </Flex>
   );
 }
