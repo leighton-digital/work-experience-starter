@@ -5,7 +5,6 @@ import { Grid, Box } from '@radix-ui/themes';
 
 export default function Display({ value, filt = 's', cols=true }:{value:string, filt?:string, cols?:boolean}) {
     const [filter, setFilter] = useState<any[]>([]);
-
     useEffect(() => {
         const movies = async () => {
             if (!value) return;
@@ -46,11 +45,15 @@ export default function Display({ value, filt = 's', cols=true }:{value:string, 
     width="auto"
     className="grid place-items-center"
     >
-    {filter.map((i) => (
-        <Box key={i.imdbID}>
-        <ListItem poster={i.Poster} title={i.Title} id={i.imdbID} />
-        </Box>
-    ))}
+    {filter.map((i) => {
+        const arr = (localStorage.getItem('watchlist')||'').split(',');
+        const inList = arr.includes(i.imdbID)
+        return (
+            <Box key={i.imdbID}>
+            <ListItem poster={i.Poster} title={i.Title} id={i.imdbID} inList={inList}/>
+            </Box>
+        )
+    })}
     </Grid>
             </div>
             </div>
