@@ -16,7 +16,7 @@ export default async function Page({
   const movie = await data.json();
 
   return (
-    <>
+    <b className="text-center">
       <h1 style={{color:'orange'}}>Movie Details </h1>
       <ListItem poster = {movie.Poster} title = {movie.Title} id = {movie.imdbID}/>
       <h4 style={{color:'orange'}}>Rating: {movie.Rated}</h4>
@@ -32,7 +32,6 @@ export default async function Page({
       <h4 style={{color:'orange'}}>Media Type: {movie.Type}</h4>
       <h5 style={{color:'orange'}}>IMDB Rating: {movie.imdbRating}</h5>
       <h6 style={{color:'orange'}}><Watchlistbox imdbID = {movie.imdbID} /></h6>
-      <h5 style={{color:'orange'}}><Link legacyBehavior href = '/'><a style={{'color':'blue', 'textDecoration': 'underline'}}>Return to home</a></Link></h5>
-    </>
+    </b>
   );
 }

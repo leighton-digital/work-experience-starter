@@ -20,6 +20,6 @@ export default function Watchlistbox({imdbID}:{imdbID:string}){
         localStorage.setItem('watchlist', arr.join(','))
     }
     return (
-        <Button onClick={()=>toggleHandler(imdbID)}>{inWatchlist?'Remove from watchlist':'Add to watchlist'}</Button>
+        <Button style={{backgroundColor:'orange'}} onClick={()=>toggleHandler(imdbID)}>{inWatchlist?'Remove from watchlist':'Add to watchlist'}</Button>
     )
 }

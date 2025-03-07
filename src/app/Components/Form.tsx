@@ -1,6 +1,6 @@
 'use client'
-export default function Form({ inputValue, onInputChange }) {
-  const handleInputChange = (e) => {
+export default function Form({ inputValue, onInputChange }:{inputValue:any, onInputChange:any}) {
+  const handleInputChange = (e:any) => {
     onInputChange(e.target.value);  
   };
 
@@ -18,4 +18,4 @@ export default function Form({ inputValue, onInputChange }) {
     </div>
         </div>
   );
-  
+}

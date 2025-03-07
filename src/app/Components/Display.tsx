@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import ListItem from './ListItem'
 import { Grid, Box } from '@radix-ui/themes';
 
-export default function Display({ value, filt = 's' }:{value:string, filt?:string}) {
+export default function Display({ value, filt = 's', cols=true }:{value:string, filt?:string, cols?:boolean}) {
     const [filter, setFilter] = useState<any[]>([]);
 
     useEffect(() => {
@@ -25,25 +25,66 @@ export default function Display({ value, filt = 's' }:{value:string, filt?:strin
         movies();
     }, [value]);
 
-
-    return (
-        <div>
-            <h1 style={{color:'orange'}}>
-                {filt ==='s'&&<>Displaying Movies</>}
+    if (cols){
+        return (
+            <div className="flex justify-center items-center flex-col">
+            <h1 style={{ color: "Cyan" , margin:'20px'}} className='text-center'>
+                {filt === 's' && <p><a style={{padding:'10px'}} className="text-center text-5xl p-4 m-4">Displaying Movies{`\n`}{`\n`}</a></p>}
             </h1>
-            <h2>
-                <Grid columns={{ initial: "1", md: "2", lg: "3" }} gap="3" width="auto">
-                    {filter.length === 0 ? (
-                        <h2 style={{color:'orange'}}>No movies found</h2>
-                    ) : (
-                        filter.map((i) => (
-                            <Box key={i.imdbID}>
-                                <ListItem poster = {i.Poster} title = {i.Title} id = {i.imdbID}/>
-                            </Box>
-                        ))
-                    )}
-                </Grid>
-            </h2>
-        </div>
-    );
+            <div className="w-full">
+            <div className="flex justify-center items-center">
+    {filter.length === 0 && (
+        <h2 style={{ color: "orange" }} className="text-center">
+        No movies found
+        </h2>
+    )}
+    </div>
+
+    <Grid
+    columns={{ initial: "1", md: "2", lg: "3" }}
+    gap="3"
+    width="auto"
+    className="grid place-items-center"
+    >
+    {filter.map((i) => (
+        <Box key={i.imdbID}>
+        <ListItem poster={i.Poster} title={i.Title} id={i.imdbID} />
+        </Box>
+    ))}
+    </Grid>
+            </div>
+            </div>
+        );
+    }
+    else{
+        return (
+            <div className="flex justify-center items-center flex-col">
+            <h1 style={{ color: "Cyan" , margin:'20px'}} className='text-center'>
+                {filt === 's' && <p><a style={{padding:'10px'}} className="text-center text-5xl p-4 m-4">Displaying Watchlist{`\n`}{`\n`}</a></p>}
+            </h1>
+            <div className="w-full">
+            <div className="flex justify-center items-center">
+    {filter.length === 0 && (
+        <h2 style={{ color: "orange" }} className="text-center">
+        No movies found
+        </h2>
+    )}
+    </div>
+
+    <Grid
+    columns={{ initial: "1", md: "1", lg: "1" }}
+    gap="3"
+    width="auto"
+    className="grid place-items-center"
+    >
+    {filter.map((i) => (
+        <Box key={i.imdbID}>
+        <ListItem poster={i.Poster} title={i.Title} id={i.imdbID} />
+        </Box>
+    ))}
+    </Grid>
+            </div>
+            </div>
+        );
+    }
 }
