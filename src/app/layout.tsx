@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { Theme } from '@radix-ui/themes';
-
+import { Theme, Flex, Box } from '@radix-ui/themes';
+import Link from 'next/link';
 import '@radix-ui/themes/styles.css';
 import './globals.css';
 
@@ -17,8 +17,86 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Theme>{children}</Theme>
+        <Theme>
+          <div style={styles.container}>
+            <div style={styles.headerContainer}>
+              <img src="/marioglass.png" alt="image of mario holding a magnifying glass" style={styles.imageLeft} />
+              <h1 style={styles.header}>
+                {Array.from('Showcase Finder').map((char, index) => (
+                  <span key={index} style={{ ...styles.letter, color: getColor(index) }}>{char}</span>
+                ))}
+              </h1>
+              <img src="/marioglass.png" alt="image of mario holding a magnifying glass" style={styles.imageRight} />
+            </div>
+            <Flex justify="center">
+              <Box>
+                <Link className='align-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700' href='/movies'>Home</Link>
+              </Box>
+              <Box>
+                <Link className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700' href='/movies/watchlist'>My Watch List</Link>
+              </Box>
+            </Flex>
+          </div>
+          {children}
+        </Theme>
       </body>
     </html>
   );
 }
+
+const getColor = (index: number) => {
+  const colors = ['#ff0000', '#ffff00', '#00ff00', '#0000ff']; // Red, yellow, green, blue
+  return colors[index % colors.length];
+};
+
+const styles = {
+  container: {
+    fontFamily: 'SuperMario, Roboto, sans-serif',
+    padding: '20px',
+    position: 'relative',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    backgroundColor: '#87CEEB', // Sky blue background
+    backgroundImage: 'url("https://www.mariowiki.com/images/6/6a/SMB3_Overworld.png")', // Mario background image
+    backgroundSize: 'cover',
+  },
+  headerContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '20px',
+    position: 'relative',
+  },
+  header: {
+    fontSize: '48px', // Increased font size
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: '0 20px', // Space between the images and the text
+    letterSpacing: '2px', // Adjusted letter spacing
+    flex: 1, // Allow the header to take up remaining space
+  },
+  letter: {
+    WebkitTextStroke: '4px black', // Thicker black outline
+    textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)', // More noticeable shadow
+  },
+  imageLeft: {
+    position: 'absolute',
+    left: 0,
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: '150px',
+    height: 'auto',
+    borderRadius: '15px',
+    objectFit: 'contain', // Ensures the image fits within the box without distortion
+  },
+  imageRight: {
+    position: 'absolute',
+    right: 0,
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: '150px',
+    height: 'auto',
+    borderRadius: '15px',
+    objectFit: 'contain', // Ensures the image fits within the box without distortion
+  },
+};
